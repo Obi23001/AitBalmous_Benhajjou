@@ -1,5 +1,5 @@
 package pk1;
-public class Cercle extends Shape {
+public class Cercle extends Shape implements Cloneable{
 	/**
 	 * Declaration des attributs
 	 */
@@ -20,5 +20,39 @@ public class Cercle extends Shape {
 	public String toString() {
 		return super.toString()+"Rayon : " + rayon;
 	}
+	/**
+	 * Redefinition de clone
+	 */
+	@Override
+	public Object clone() throws CloneNotSupportedException {
+		Object cercle;
+		try
+	    {
+	        cercle = (Object) super.clone();
+	    }
+	    catch (CloneNotSupportedException e)
+	    {
+	        throw new Error();
+	    }
+		return cercle;
+	}
+	/**
+	 * Redefinition de equals
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		//si l'objet est lui meme
+		if (obj == this) {
+            return true;
+        }
+		//si l'objet n'est pas une instance du Cercle
+		if (!(obj instanceof Cercle)) {
+	        return false;
+	    }
+		Cercle autreCercle = (Cercle) obj;
+		return autreCercle.rayon == this.rayon && autreCercle.getCouleur().equals(this.getCouleur());
+	}
+	
+	
 	
 }

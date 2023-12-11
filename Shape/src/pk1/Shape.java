@@ -4,6 +4,9 @@ public class Shape {
 	 * Declaration des attributs
 	 */
 	private String couleur;
+	public String getCouleur() {
+		return couleur;
+	}
 	/**
 	 * Constructeur avec parametre
 	 * @param couleur de la forme
@@ -16,6 +19,7 @@ public class Shape {
 	 */
 	@Override
 	public String toString() {
-		return "Couleur : "+couleur+"\n";
+		return "Couleur : "+getCouleur()+"\n";
 	}
+	
 }
