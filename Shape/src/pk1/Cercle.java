@@ -1,5 +1,5 @@
 package pk1;
-public class Cercle extends Shape implements Cloneable{
+public class Cercle extends Shape implements Cloneable,Comparable<Cercle>{
 	/**
 	 * Declaration des attributs
 	 */
@@ -51,6 +51,19 @@ public class Cercle extends Shape implements Cloneable{
 	    }
 		Cercle autreCercle = (Cercle) obj;
 		return autreCercle.rayon == this.rayon && autreCercle.getCouleur().equals(this.getCouleur());
+	}
+	/**
+	 * Implementation de l'interface Comparable
+	 */
+	@Override
+	public int compareTo(Cercle o) {
+		if (this.rayon < o.rayon) {
+            return -1;
+        } else if (this.rayon > o.rayon) {
+            return 1;
+        } else {
+            return 0;
+        }
 	}
 	
 	
