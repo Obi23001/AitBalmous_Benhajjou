@@ -1,0 +1,65 @@
+package pk1;
+
+import java.util.Arrays;
+
+/**
+ * Declaration d'une nouvelle class contenant un tableau de type class mere 
+ */
+public class MyShape {
+	private Shape[] shapes;
+	private int size;
+	/**
+	 * Constructeur qui remplit un tableau donnee
+	 * @param couleur de la forme
+	 * @param la taille du tableau
+	 */
+	public MyShape(Shape[] formes) {
+		this.size = formes.length;
+		shapes = new Shape[size];
+		for (int i = 0; i < size; i++) {
+			if (formes[i] instanceof Shape) {
+				shapes[i] = formes[i];
+			}
+		}
+	}
+	/**
+	 * Methode pour trier le tableau
+	 */
+	public void sort() {
+		Arrays.sort(shapes);
+	}
+	/**
+	 * Ajout d'une autre array a shapes[]
+	 * @param forme : array a ajoutee
+	 */
+	public void add(Shape forme) {
+		shapes[size] = forme;
+		size++;
+	}
+	/**
+	 * Methode pour supprimer un array dans shape[]
+	 * @param forme a supprimee
+	 */
+	public void supprimer(Shape forme) {
+		for(Shape shape : shapes) {
+			if(shape.equals(forme))
+				shape = null;
+		}
+	}
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	public Shape[] getShapes() {
+		return shapes;
+	}
+	public void setShapes(Shape[] shapes) {
+		this.shapes = shapes;
+	}
+	
+
+}
