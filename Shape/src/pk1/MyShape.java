@@ -82,15 +82,27 @@ public class MyShape {
 			System.out.println(shapes[i]);
 		}
 	}
+	/**
+	 * Methode pour extracter max element dans un tableau
+	 * @return max element
+	 */
 	public double max() {
 		double max = 0;
-		for(Shape shape : shapes)
+		for(Shape shape : shapes) {
 			if(shape instanceof Cercle)
 				if(((Cercle) shape).getRayon() > max)
 					max=((Cercle) shape).getRayon();
+		}
 		return max;
 	}
-	
+//	public boolean egalite(MyShape myshape) {
+//		for(Shape shape : shapes) {
+//			if(shape instanceof Cercle)
+//				if(((Cercle) shape).getRayon() > max)
+//				
+//		}
+//		return myshape.shapes.equals(shapes);
+//	}
 	public int getSize() {
 		return size;
 	}

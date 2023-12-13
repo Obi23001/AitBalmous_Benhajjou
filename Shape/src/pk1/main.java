@@ -49,6 +49,11 @@ public class main {
 		myShape.afficher();
 		System.out.println("*********Max element********");	
 		System.out.println(myShape.max());
+		
+		Shape[] formes2 = { cercle4, cercle1, cercle1Clone, cercle3};
+		MyShape myShape2 = new MyShape(formes2);
+		myShape2.afficher();
+//		System.out.println(myShape.egalite(myShape2));
 	}
 
 }
