@@ -1,5 +1,8 @@
 package pk1;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 /**
  * Declaration d'une nouvelle class contenant un tableau de type class mere 
  */
@@ -20,7 +23,47 @@ public class MyShape {
 			}
 		}
 	}
-	
+	/**
+	 * Methode pour trier le tableau
+	 */
+	public void sort() {
+		Arrays.sort(shapes);
+	}
+	/**
+	 * Ajout d'une autre array a shapes[]
+	 * @param forme : array a ajoutee
+	 */
+	public void add(Shape forme) {
+		shapes[size] = forme;
+		size++;
+	}
+	/**
+	 * Methode pour supprimer un array dans shape[]
+	 * @param forme a supprimee
+	 */
+	public void supprimer(Shape forme) {
+		for (int i = 0; i < size; i++) {
+			if (shapes[i].equals(forme)) {
+				shapes[i] = null;
+				size--;
+			}
+		}
+	}
+	/**
+	 * Methode pour compter le nbr d'elements
+	 * @return nbr d'elements
+	 */
+	public int count() {
+		  int cpt = 0;
+		  for (int i = 0; i < size; i++) {
+		    cpt++;
+		  }
+		  return cpt;
+	}
+	public MyShape reverse(MyShape forme) {
+		Collections.reverse(Arrays.asList(forme));
+		return forme;
+	}
 	public int getSize() {
 		return size;
 	}

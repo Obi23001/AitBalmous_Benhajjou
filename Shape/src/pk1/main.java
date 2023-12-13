@@ -26,12 +26,32 @@ public class main {
 //		for(int i=0;i<formes.length;i++)
 //			System.out.println(formes[i]);
 
-		Shape[] formes = { cercle1, cercle1Clone, cercle2, cercle3 };
+		Shape[] formes = { cercle1, cercle1Clone, cercle2, cercle3};
 		MyShape myShape = new MyShape(formes);
+		System.out.println("*********Our Arrays********");
 		for (int i = 0; i < myShape.getSize(); i++) {
 			System.out.println(myShape.getShapes()[i]);
 		}
-
+		System.out.println();
+		System.out.println("*********After Sorting********");
+		myShape.sort();
+		for (int i = 0; i < myShape.getSize(); i++) {
+			System.out.println(myShape.getShapes()[i]);
+		}
+		System.out.println();
+		System.out.println("*********After Removal********");
+		myShape.supprimer(cercle2);
+		for (int i = 0; i < myShape.getSize(); i++) {
+			System.out.println(myShape.getShapes()[i]);
+		}
+		System.out.println();
+		System.out.println("Nombre d'elements : "+myShape.count());
+		System.out.println();
+		System.out.println("*********After Reversing********");
+		myShape.toString();
+		for (int i = 0; i < myShape.getSize(); i++) {
+			System.out.println(myShape.getShapes()[i]);
+		}
 	}
 
 }
