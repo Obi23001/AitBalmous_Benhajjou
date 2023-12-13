@@ -1,0 +1,23 @@
+package pk1;
+
+/**
+ * Declaration d'une nouvelle class contenant un tableau de type class mere 
+ */
+public class MyShape {
+	private static int size;
+	private Shape[] shapes;
+	private Cercle cercle;
+	/**
+	 * Constructeur qui remplit un tableau donnee
+	 * @param couleur de la forme
+	 * @param la taille du tableau
+	 */
+	public MyShape(int size,Cercle cercle) {
+		this.size = size;
+		shapes = new Shape[size];
+		for (int i = 0; i < size; i++) {
+			shapes[i] = new Cercle(cercle.getCouleur(),cercle.getRayon());
+		}
+	}
+	
+}

@@ -1,0 +1,5 @@
+INDEX VERSION 1.134+C:\Users\Obi23\Desktop\Programmation\Java\Atelier\.metadata\.plugins\org.eclipse.jdt.core
+454973982.index
+508002022.index
+1865797976.index
+274550510.index

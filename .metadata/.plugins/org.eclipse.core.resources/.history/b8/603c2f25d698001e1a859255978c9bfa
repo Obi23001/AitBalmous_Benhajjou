@@ -1,0 +1,45 @@
+package exercices;
+import java.util.Arrays;
+
+import java.util.List;
+import java.util.OptionalInt;
+import java.util.stream.Stream;
+
+import static exercices.Member.Type;
+import static exercices.Member.members;
+public class TestMember {
+
+	public static void main(String[] args) {
+		// 1.Sélectionner les membres ayant l’ « handicap » supérieur à 20 ;
+		System.out.println("******************HandicapMembers > 20******************");
+		List<Member> handicapMembers = members.stream()
+				.sorted((m1,m2)->m1.getHandicap()-m2.getHandicap())
+				.takeWhile(member -> member.getHandicap() < 20)
+				.toList();
+		handicapMembers.forEach(m->System.out.println(m));
+		// 2.Sélectionner les noms (LastName) des « Members »  jouant dans TeamA ; 
+		System.out.println("******************TeamA LastNames***********************");
+		List<String> teamA = members.stream()
+					.map(m->m.getLastName())
+					.toList();
+		teamA.forEach(m->System.out.println(m));
+		// 3.Sélectionner les noms (LastName) des « Members» de « Gender » =F ;
+		System.out.println("******************Female Members*************************");
+		List<String>  femaleMembers= members.stream()
+				.filter(m -> m.getGender() == 'F')
+				.map(m->m.getLastName())
+				.toList();
+		femaleMembers.forEach(m->System.out.println(m));
+		// 4.Trier les « Members» de type « Junior » en fonction de leur « handicap » ;
+		// 5.Tier les « Members» jouant dans « TeamA » en fonction de leur nom (lastName) ;
+		// 6.Sélectionner les types (type) des « Members » jouant dans l’équipe « TeamC » ;
+		// 7.Sélectionner les noms (LastName) des « Members» de type « Senior » jouant dans « TeamB » ;	
+		// 8.Renvoyer le maximum des handicaps ;
+		// 9.Renvoyer le minimum des handicaps ;
+		// 10. Y'a t-il un membre jouant dans l'équipe TeamC et ayant un handicap >20 ;
+
+		
+		
+	}
+
+}

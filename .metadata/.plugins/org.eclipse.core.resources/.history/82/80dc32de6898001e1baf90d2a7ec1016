@@ -1,0 +1,15 @@
+package pk1;
+
+public class main {
+
+	public static void main(String[] args) throws CloneNotSupportedException {
+		Cercle cercle1 = new Cercle("Rouge",4);
+		Cercle cercle1Clone = (Cercle) cercle1.clone();
+		
+		System.out.println(cercle1.toString());
+		System.out.println(cercle1Clone.toString());
+		cercle1.equals(cercle1Clone);
+
+	}
+
+}
