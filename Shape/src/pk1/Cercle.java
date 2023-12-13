@@ -67,5 +67,10 @@ public class Cercle extends Shape implements Cloneable,Comparable<Cercle>{
 	}
 	
 	
-	
+	public double getRayon() {
+		return rayon;
+	}
+	public void setRayon(double rayon) {
+		this.rayon = rayon;
+	}
 }

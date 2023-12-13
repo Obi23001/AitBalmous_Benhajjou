@@ -2,6 +2,7 @@ package pk1;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 /**
  * Declaration d'une nouvelle class contenant un tableau de type class mere 
@@ -60,10 +61,36 @@ public class MyShape {
 		  }
 		  return cpt;
 	}
-	public MyShape reverse(MyShape forme) {
-		Collections.reverse(Arrays.asList(forme));
-		return forme;
+	/**
+	 * Methode pour inverser le tableau 
+	 * @param forme : tableau a inverser
+	 * @return tableau inverse
+	 */
+	public void reverse() {
+		  int taille = size;
+		  for (int i = 0; i < taille / 2; i++) {
+		    Shape temp = shapes[i];
+		    shapes[i] = shapes[taille - 1 - i];
+		    shapes[taille - 1 - i] = temp;
+		  }
 	}
+	/**
+	 * Methode pour afficher le tableau
+	 */
+	public void afficher() {
+		for (int i = 0; i < size; i++) {
+			System.out.println(shapes[i]);
+		}
+	}
+	public double max() {
+		double max = 0;
+		for(Shape shape : shapes)
+			if(shape instanceof Cercle)
+				if(((Cercle) shape).getRayon() > max)
+					max=((Cercle) shape).getRayon();
+		return max;
+	}
+	
 	public int getSize() {
 		return size;
 	}
