@@ -1,8 +1,6 @@
 package pk1;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
 
 /**
  * Declaration d'une nouvelle class contenant un tableau de type class mere

@@ -1,76 +1,83 @@
 package pk1;
-public class Cercle extends Shape implements Cloneable,Comparable<Cercle>{
+
+public class Cercle extends Shape implements Cloneable {
 	/**
 	 * Declaration des attributs
 	 */
 	private double rayon;
+
 	/**
 	 * Constructeur avec parametre
+	 * 
 	 * @param couleur du cercle
-	 * @param rayon du cercle
+	 * @param rayon   du cercle
 	 */
-	public Cercle(String couleur,double rayon) {
+	public Cercle(String couleur, double rayon) {
 		super(couleur);
-		this.rayon=rayon;
+		this.rayon = rayon;
 	}
+
 	/**
 	 * Redefinition de toString
 	 */
 	@Override
 	public String toString() {
-		return super.toString()+"Rayon : " + rayon;
+		return super.toString() + "Rayon : " + rayon;
 	}
+
 	/**
 	 * Redefinition de clone
 	 */
 	@Override
 	public Object clone() throws CloneNotSupportedException {
 		Object cercle;
-		try
-	    {
-	        cercle = (Object) super.clone();
-	    }
-	    catch (CloneNotSupportedException e)
-	    {
-	        throw new Error();
-	    }
+		try {
+			cercle = (Object) super.clone();
+		} catch (CloneNotSupportedException e) {
+			throw new Error();
+		}
 		return cercle;
 	}
+
 	/**
 	 * Redefinition de equals
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		//si l'objet est lui meme
+		// si l'objet est lui meme
 		if (obj == this) {
-            return true;
-        }
-		//si l'objet n'est pas une instance du Cercle
+			return true;
+		}
+		// si l'objet n'est pas une instance du Cercle
 		if (!(obj instanceof Cercle)) {
-	        return false;
-	    }
+			return false;
+		}
 		Cercle autreCercle = (Cercle) obj;
 		return autreCercle.rayon == this.rayon && autreCercle.getCouleur().equals(this.getCouleur());
 	}
+
 	/**
 	 * Implementation de l'interface Comparable
 	 */
-	@Override
-	public int compareTo(Cercle o) {
-		if (this.rayon < o.rayon) {
-            return -1;
-        } else if (this.rayon > o.rayon) {
-            return 1;
-        } else {
-            return 0;
-        }
-	}
-	
-	
+
 	public double getRayon() {
 		return rayon;
 	}
+
 	public void setRayon(double rayon) {
 		this.rayon = rayon;
+	}
+
+	@Override
+	public int compareTo(Shape o) {
+		if (o instanceof Cercle) {
+			Cercle cercle = (Cercle) o;
+			if (this.rayon < cercle.rayon) {
+				return -1;
+			} else if (this.rayon > cercle.rayon) {
+				return 1;
+			}
+		}
+		return 0;
 	}
 }
