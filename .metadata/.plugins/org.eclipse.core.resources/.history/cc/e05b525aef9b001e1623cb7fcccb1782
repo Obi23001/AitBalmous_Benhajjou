@@ -1,0 +1,18 @@
+package pk1;
+import java.util.ArrayList;
+import java.util.List;
+/**
+ * Declaration d'une classe contenant une liste de type classe mere
+ */
+public class MyShapeList {
+	public List<Shape> list = new ArrayList<Shape>();
+	
+	public void alimenterList(MyShape myShape) {
+		for(Shape shapes : myShape.getShapes())
+			list.add(shapes);
+	}
+	public void afficherList() {
+		System.out.println();	
+	}
+	
+}
