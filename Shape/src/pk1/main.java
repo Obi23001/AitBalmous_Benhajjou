@@ -79,7 +79,7 @@ public class main {
 		System.out.println("*********List After Clear********");
 		myExtractedList.viderList();
 		myExtractedList.parcourirListIterator();
-		System.out.println("*********List After Clear********");
+		System.out.println("*********List After Swaping********");
 		myList.swapElements(1, 3);
 		myList.parcourirListIterator();
 		
