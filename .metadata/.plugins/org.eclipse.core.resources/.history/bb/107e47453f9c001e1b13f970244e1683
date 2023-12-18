@@ -110,11 +110,6 @@ public class MyShapeList {
 		}
 		return true;		
 	}
-	public void swapElements(int indexOfElement1,int indexOfElement2) {
-		Shape temp = list.get(indexOfElement1);
-		list.set(indexOfElement1, list.get(indexOfElement2));
-		list.set(indexOfElement2, temp);
-	}
 	/**
 	 * Methode pour vider la liste
 	 */

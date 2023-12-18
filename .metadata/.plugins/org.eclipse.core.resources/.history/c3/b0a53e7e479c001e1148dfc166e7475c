@@ -114,6 +114,7 @@ public class MyShapeList {
 		Shape temp = list.get(indexOfElement1);
 		list.set(indexOfElement1, list.get(indexOfElement2));
 		list.set(indexOfElement2, temp);
+		
 	}
 	/**
 	 * Methode pour vider la liste

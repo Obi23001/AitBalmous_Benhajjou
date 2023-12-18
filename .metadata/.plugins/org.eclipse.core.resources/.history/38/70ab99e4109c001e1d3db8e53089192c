@@ -76,13 +76,6 @@ public class main {
 		myExtractedList.parcourirListIterator();
 		System.out.println("*********Comparing 2 Lists********");
 		System.out.println(myList.comparerList(myExtractedList));
-		System.out.println("*********List After Clear********");
-		myExtractedList.viderList();
-		myExtractedList.parcourirListIterator();
-		System.out.println("*********List After Clear********");
-		myList.swapElements(1, 3);
-		myList.parcourirListIterator();
-		
 	}
 
 }

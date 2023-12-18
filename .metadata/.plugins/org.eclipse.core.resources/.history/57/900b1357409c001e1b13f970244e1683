@@ -80,7 +80,7 @@ public class main {
 		myExtractedList.viderList();
 		myExtractedList.parcourirListIterator();
 		System.out.println("*********List After Clear********");
-		myList.swapElements(1, 3);
+		myList.swapElements(0, 2);
 		myList.parcourirListIterator();
 		
 	}

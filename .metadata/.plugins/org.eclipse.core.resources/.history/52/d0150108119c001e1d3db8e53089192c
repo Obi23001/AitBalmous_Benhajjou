@@ -26,8 +26,6 @@ public class MyShapeList {
 	 * Methode pour afficher la liste
 	 */
 	public void afficherList() {
-		if(list.size() == 0)
-			System.out.println("Liste est Vide");
 		for(Shape shape : list)
 			System.out.println(shape);
 	}
@@ -35,7 +33,7 @@ public class MyShapeList {
 	 * Method pour afficher la liste en la parcourant avec un iterateur
 	 */
 	public void parcourirListIterator() {
-		if(list.size() == 0)
+		if(list == null)
 			System.out.println("Liste est Vide");
 		Iterator<Shape> it = this.list.iterator();
 		while(it.hasNext()) {
@@ -109,11 +107,6 @@ public class MyShapeList {
 				return false;
 		}
 		return true;		
-	}
-	public void swapElements(int indexOfElement1,int indexOfElement2) {
-		Shape temp = list.get(indexOfElement1);
-		list.set(indexOfElement1, list.get(indexOfElement2));
-		list.set(indexOfElement2, temp);
 	}
 	/**
 	 * Methode pour vider la liste
