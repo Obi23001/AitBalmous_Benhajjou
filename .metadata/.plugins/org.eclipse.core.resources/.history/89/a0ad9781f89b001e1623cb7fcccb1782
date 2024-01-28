@@ -1,0 +1,36 @@
+package pk1;
+
+public class Shape implements Comparable<Shape>{
+	/**
+	 * Declaration des attributs
+	 */
+	private String couleur;
+
+	public String getCouleur() {
+		return couleur;
+	}
+
+	/**
+	 * Constructeur avec parametre
+	 * 
+	 * @param couleur de la forme
+	 */
+	public Shape(String couleur) {
+		this.couleur = couleur;
+	}
+
+	/**
+	 * Redefinition de toString
+	 */
+	@Override
+	public String toString() {
+		return "Couleur : " + getCouleur() + "\n";
+	}
+	/**
+	 * Implementation de l'interface Comparable
+	 */
+	public int compareTo(Cercle o) {
+		return 0;
+	}
+
+}
